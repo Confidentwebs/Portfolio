@@ -1,0 +1,177 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --accent-color: #ffc107; /* Yellow */
+    
+    /* Background Colors */
+    --background-color: #f8f9fa; /* Light Gray */
+    --alternate-background-color: #e9ecef; /* Lighter Gray */
+    
+    /* Text Colors */
+    --text-color: #343a40; /* Dark Gray */
+    --secondary-text-color: #6c757d; /* Medium Gray */
+    --accent-text-color: #ffc107; /* Yellow */
+    
+    /* Border Colors */
+    --border-color: #ced4da; /* Light Gray */
+    --accent-border-color: #ffc107; /* Yellow */
+    
+    /* Semantic Colors */
+    --success-color: #28a745; /* Green */
+    --info-color: #17a2b8; /* Teal */
+    --warning-color: #ffc107; /* Yellow */
+    --danger-color: #dc3545; /* Red */
+  }
+  
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    
+  }
+
+  header{
+    background-image: url('banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    margin-bottom: 0;
+  }
+
+  main {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ensure main covers entire width */
+    height: 100vh; /*Make main full height of viewport*/
+    min-height: calc(100vh - 300px); /* Adjusted height to exclude header height */
+    margin-top: -20px;
+    background-color: var(--border-color);
+}
+
+
+
+section {
+    padding: 100px 20px; /* Adjust padding as needed */
+    color: var(--text-color); /* Default text color for sections */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    color: var(--background-color);
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between; /* Align items to space between */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    flex-wrap: wrap; /* Allow items to wrap */
+    padding: 10px; /* Add padding */
+    box-sizing: border-box; /* Include padding in width */
+    display: none; /* Hide initially */
+    margin-top: 50px;
+}
+
+.nav.active {
+    display: flex; /* Display when active */
+   
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align list items horizontally */
+    flex-direction: row; /* Align list items horizontally */
+    
+}
+
+.nav ul li {
+    margin: 0 10px; /* Add margin for spacing */
+    
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: larger;
+    
+}
+
+.toggle {
+    cursor: pointer;
+}
+
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--background-color);
+    margin: 6px 0;
+}
+
+
+footer{
+    background-image: url('banner.jpg');
+    color: var(--background-color);
+    height: 100px;
+    padding: 10px;
+    border-top: #333 4px solid;
+}
+
+
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    box-shadow: 4px 4px 6px #1d1d1d; /* Shadow effect */
+    margin: 30px;
+}
+
+.images img {
+    max-width: 100%;
+}
+
+.divs{
+    border-bottom: 2px solid #36333386;
+}
+
+
+
+
+
+@media screen and (min-width: 769px) {
+    .toggle {
+        display: none; /* Hide toggle button on larger screens */
+    }
+
+    .nav {
+        position: static;
+        display: flex; /* Display nav links on larger screens */
+    }
+
+    .nav ul {
+        justify-content: center; /* Align list items to the center horizontally */
+    }
+}

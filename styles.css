@@ -1,0 +1,139 @@
+:root {
+  /* Primary Colors */
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #6c757d; /* Gray */
+  --accent-color: #ffc107; /* Yellow */
+  
+  /* Background Colors */
+  --background-color: #f8f9fa; /* Light Gray */
+  --alternate-background-color: #e9ecef; /* Lighter Gray */
+  
+  /* Text Colors */
+  --text-color: #343a40; /* Dark Gray */
+  --secondary-text-color: #6c757d; /* Medium Gray */
+  --accent-text-color: #ffc107; /* Yellow */
+  
+  /* Border Colors */
+  --border-color: #ced4da; /* Light Gray */
+  --accent-border-color: #ffc107; /* Yellow */
+  
+  /* Semantic Colors */
+  --success-color: #28a745; /* Green */
+  --info-color: #17a2b8; /* Teal */
+  --warning-color: #ffc107; /* Yellow */
+  --danger-color: #dc3545; /* Red */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.left-side {
+  flex: 1;
+  background-image: url('banner.jpg'); /* Replace 'your-image.jpg' with your image path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+
+#text-container {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+
+/* Existing CSS styles */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+@keyframes fadeInFromTop {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.left-side #text-container {
+  animation: fadeInFromTop 3s ease forwards;
+}
+
+
+.right-side {
+  position: relative; /* Add this to make the video position properly */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide overflowing video */
+}
+
+
+.content {
+  text-align: center;
+}
+
+.enter-button {
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.enter-button:hover {
+  background-color: var(--accent-color);
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+
+  .left-side, .right-side {
+      width: 100%;
+  }
+
+  .right-side {
+      margin-top: 20px; /* Add space between left and right sides */
+  }
+
+  .bg-video {
+      width: 100%;
+      height: auto;
+      min-height: 100%; /* Ensure the video covers the entire viewport height */
+  }
+}
